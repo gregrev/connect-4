@@ -1,0 +1,58 @@
+/* game board table */
+#game {
+    background-color: rgb(80, 80, 80);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+  }
+  
+  #board td {
+    width: 50px;
+    height: 50px;
+    border: solid 2px rgb(255, 255, 255);
+    /* border-radius: 70%; */
+  }
+  
+  /* pieces are div within game table cells: draw as colored circles */
+  
+  @keyframes falling {
+    from {
+      transform: translateY(-700%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .piece {
+    /* TODO: make into circles */
+    margin: 5px;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    animation: falling .75s ease-in-out forwards;
+  }
+  
+  /* TODO: make pieces red/blue,  depending on player 1/2 piece */
+  .piece.p1 {
+    background-color: red;
+  }
+  
+  .piece.p2{
+    background-color: blue;
+  }
+  /* column-top is table row of clickable areas for each column */
+  
+  #column-top td {
+    border: dashed 1px lightgray;
+  }
+  
+  #column-top td:hover {
+    background-color: rgb(131, 131, 131);
+    cursor: pointer;
+  }
+  
