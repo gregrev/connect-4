@@ -107,7 +107,9 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
   // TODO: pop up alert message
-  alert(msg);
+  setTimeout(function(){
+    alert(msg);
+  }, 1000)
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -140,11 +142,12 @@ function handleClick(evt) {
 
   // switch players
   // TODO: switch currPlayer 1 <-> 2
-  if (currPlayer === 1) {
-    currPlayer = 2;
-  } else {
-    currPlayer = 1;
-  }
+  // if (currPlayer === 1) {
+  //   currPlayer = 2;
+  // } else {
+  //   currPlayer = 1;
+  // }
+    currPlayer = currPlayer === 1 ? 2 : 1;
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
